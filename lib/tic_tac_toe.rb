@@ -2,7 +2,7 @@ class TicTacToe
   def initialize(board = nil)
     @board = board || Array.new(9, " ")
   end
-  
+
   WIN_COMBINATIONS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [6,4,2]]
 
   def display_board(board)
@@ -49,6 +49,14 @@ class TicTacToe
     end
   end
   counter
+  end
+
+  def current_player(board)
+    if turn_count(board).even?
+      "X"
+    else
+      "O"
+    end
   end
 
 end

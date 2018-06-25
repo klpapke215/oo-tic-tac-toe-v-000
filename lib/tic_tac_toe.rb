@@ -43,7 +43,7 @@ class TicTacToe
 
   def turn_count
    counter = 0
-   board.each do |space|
+   @board.each do |space|
     if space != " "
    counter += 1
     end
@@ -65,11 +65,11 @@ class TicTacToe
       windex_2 = win_combination[1]
       windex_3 = win_combination[2]
 
-      position_1 = board[windex_1]
-      position_2 = board[windex_2]
-      position_3 = board[windex_3]
+      position_1 = @board[windex_1]
+      position_2 = @board[windex_2]
+      position_3 = @board[windex_3]
 
-      if board.all? { |index| index == " "}
+      if @board.all? { |index| index == " "}
         false
       elsif position_1 == "X" && position_2 == "X" && position_3 == "X"
         return win_combination
@@ -83,7 +83,7 @@ class TicTacToe
   end
 
   def full?
-    board.all? { |space| space == "X" || space == "O" }
+    @board.all? { |space| space == "X" || space == "O" }
   end
 
   def draw?
@@ -96,7 +96,7 @@ class TicTacToe
 
   def winner
     if winning_combo = won?
-  board[winning_combo[0]]
+  @board[winning_combo[0]]
     end
   end
 
